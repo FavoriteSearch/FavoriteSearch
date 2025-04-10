@@ -75,7 +75,7 @@ Whether you're a casual browser with a few dozen bookmarks or a power user with 
 - **Full-text search**: Matches both titles and URLs
 - **Partial matching**: Find results with just a few characters
 - **Highlighted matches**: Easily see why each result matched your query
-- **Result limiting**: Shows the most relevant 50 results for performance
+- **Result limiting**: Shows the most relevant results
 - **Empty state handling**: Clear messaging when no results are found
 - **URL display**: See the full URL for each bookmark before clicking
 
