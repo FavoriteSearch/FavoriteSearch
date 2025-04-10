@@ -67,7 +67,6 @@ Whether you're a casual browser with a few dozen bookmarks or a power user with 
 - Jump to your most-used work tools without navigating through folders
 - Locate a specific article you saved for later reading
 - Access your banking website without scrolling through financial bookmarks
-- Find travel sites when planning your next vacation
 - Retrieve bookmarked tutorials when learning new skills
 
 ## 🔍 Search Features
