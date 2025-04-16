@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #0078d7;
+  --primary-light: #e9f5ff;
+  --primary-dark: #005a9e;
+  --text-color: #333;
+  --text-light: #666;
+  --border-color: #ddd;
+  --bg-color: #f8f9fa;
+  --hover-color: #f0f7ff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  width: 380px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.search-container {
+  padding: 15px 15px 5px;
+  background-color: white;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-light);
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px 40px 10px 35px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2);
+}
+
+.clear-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 5px;
+  display: none;
+}
+
+.clear-button:hover {
+  color: var(--primary-color);
+}
+
+#results-container {
+  max-height: 350px;
+  overflow-y: auto;
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-light) transparent;
+}
+
+#results-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#results-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#results-container::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 3px;
+}
+
+.result-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-item:hover {
+  background-color: var(--hover-color);
+}
+
+/* Styling for keyboard navigation selected item */
+.result-item.selected {
+  background-color: var(--primary-light);
+  border-left: 3px solid var(--primary-color);
+  padding-left: 12px; /* Adjust for the border */
+}
+
+.result-title {
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-url {
+  font-size: 12px;
+  color: var(--text-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-light);
+  padding: 30px 0;
+  font-style: italic;
+  background-color: white;
+}
+
+.result-count {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 11px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-light);
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Highlight styling */
+.highlight {
+  background-color: transparent;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Specific highlight styling for URLs */
+.result-url .highlight {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Animation for results */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-item {
+  animation: fadeIn 0.2s ease-out;
+}
